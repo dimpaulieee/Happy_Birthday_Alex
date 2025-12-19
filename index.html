@@ -2,177 +2,264 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Alex 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<!-- Mobile Enhancements -->
-<meta name="theme-color" content="#1a0a0a">
+<!-- Mobile / PWA Enhancements -->
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#1a0a0a">
+
+<title>Happy Birthday My Love, Alex!</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: radial-gradient(circle at top, #2b0a1a, #0a0a0a);
-    color: white;
-    overflow-x: hidden;
-    text-align: center;
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+background:linear-gradient(135deg,#1a0a0a,#2e0e0e,#1a0a0a);
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:16px;
+font-family:'Poppins',sans-serif;
+color:#fff;
+overflow-x:hidden
+}
+button{touch-action:manipulation}
+
+.container{max-width:1200px;width:100%;text-align:center;z-index:10}
+h1{
+font-family:'Dancing Script',cursive;
+color:#ff3b6d;
+font-size:4rem;
+text-shadow:0 0 20px rgba(255,59,109,.7)
+}
+.subtitle{color:#ffa3b4;font-size:1.6rem;margin-top:10px}
+.hearts-title{margin-top:5px;color:#ff3b6d}
+
+.birthday-box{
+background:linear-gradient(145deg,rgba(90,10,20,.9),rgba(40,5,10,.95));
+border-radius:25px;
+padding:30px;
+margin-top:30px;
+box-shadow:0 20px 40px rgba(0,0,0,.5)
 }
 
-h1 {
-    font-size: 2.5rem;
-    margin-top: 40px;
+.cake-container{position:relative;width:300px;height:300px;margin:0 auto}
+.cake{
+position:absolute;
+bottom:0;
+left:50%;
+transform:translateX(-50%);
+width:240px;height:100px;
+background:linear-gradient(135deg,#ff1a4d,#b3002d);
+border-radius:50% 50% 0 0;
+box-shadow:inset -10px -10px 20px rgba(0,0,0,.3)
+}
+.candles{
+position:absolute;
+bottom:120px;
+width:100%;
+display:flex;
+justify-content:center;
+gap:15px
+}
+.candle{
+width:12px;height:45px;
+background:linear-gradient(#ff1a4d,#990022);
+border-radius:6px;
+position:relative
+}
+.flame{
+position:absolute;
+top:-30px;
+left:-4px;
+width:20px;height:30px;
+background:radial-gradient(#ffde59,#ff9e00,#ff3b6d);
+border-radius:50%;
+opacity:0;
+filter:blur(1px)
+}
+.flame.lit{
+animation:flicker .4s infinite alternate;
+opacity:1
+}
+@keyframes flicker{
+from{transform:scale(1) rotate(-2deg)}
+to{transform:scale(1.1) rotate(2deg)}
 }
 
-.subtitle {
-    opacity: 0.85;
-    font-size: 1rem;
-    margin-bottom: 30px;
+.message-container{
+margin-top:30px;
+padding:25px;
+background:rgba(20,5,10,.7);
+border-radius:20px;
+text-align:left
+}
+.message{font-size:1.2rem;color:#ffd1dc;line-height:1.7}
+.signature{
+margin-top:20px;
+font-family:'Dancing Script',cursive;
+font-size:2.5rem;
+color:#ff3b6d;
+text-align:right
 }
 
-button {
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    border-radius: 30px;
-    border: none;
-    background: linear-gradient(45deg, #ff4b7d, #ff85a2);
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 10px 30px rgba(255,75,125,0.4);
-    touch-action: manipulation;
+.birthday-btn{
+margin-top:30px;
+background:linear-gradient(135deg,#ff1a4d,#b3002d);
+color:#fff;
+border:none;
+padding:15px 30px;
+font-size:1.2rem;
+border-radius:50px;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(255,26,77,.5)
+}
+.birthday-btn:active{transform:scale(.96)}
+
+.love-note{
+display:none;
+margin-top:30px;
+padding:20px;
+border-radius:15px;
+background:rgba(255,59,109,.15)
 }
 
-button:active {
-    transform: scale(0.95);
+.stars{
+position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1
+}
+.star{
+position:absolute;
+background:#fff;
+border-radius:50%;
+opacity:.6;
+animation:twinkle 3s infinite
+}
+@keyframes twinkle{50%{opacity:1}}
+
+.heart-particle{
+position:fixed;
+font-size:1.5rem;
+pointer-events:none;
+z-index:50
 }
 
-.message {
-    margin: 40px auto;
-    max-width: 600px;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    display: none;
-}
-
-/* Slideshow */
-.slideshow {
-    width: 90%;
-    max-width: 320px;
-    margin: 30px auto;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(255,0,100,0.4);
-    display: none;
-}
-
-.slideshow img {
-    width: 100%;
-    height: auto;
-    display: none;
-}
-
-/* Floating hearts */
-.heart {
-    position: fixed;
-    font-size: 1.5rem;
-    animation: floatUp 4s linear forwards;
-    pointer-events: none;
-}
-
-@keyframes floatUp {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-120vh); opacity: 0; }
-}
-
-@media (max-width: 480px) {
-    h1 { font-size: 2rem; }
+/* Mobile tweaks */
+@media(max-width:480px){
+h1{font-size:2.4rem}
+.subtitle{font-size:1.3rem}
+.message{font-size:1.1rem}
+.stars{opacity:.4}
 }
 </style>
 </head>
 
 <body>
 
-<h1>Happy Birthday, Alex 🎂💖</h1>
-<div class="subtitle">Since April 09, 2023 ✨</div>
+<!-- 🎶 BACKGROUND MUSIC -->
+<audio id="bgMusic" src="music.mp3" loop preload="auto"></audio>
 
-<button id="startBtn">Tap for a Surprise 💝</button>
+<div class="stars" id="stars"></div>
 
-<div class="message" id="msg1">
-    Alex, you are my favorite plot twist in life.  
-    Every day with you feels softer, warmer, and brighter 💕
+<div class="container">
+<h1>Happy Birthday My Love, Alex!</h1>
+<div class="subtitle">Today is all about celebrating you</div>
+<div class="hearts-title">With all my love, Paul ❤️</div>
+
+<div class="birthday-box">
+
+<div class="cake-container">
+<div class="cake"></div>
+<div class="candles">
+<div class="candle"><div class="flame"></div></div>
+<div class="candle"><div class="flame"></div></div>
+<div class="candle"><div class="flame"></div></div>
+<div class="candle"><div class="flame"></div></div>
+<div class="candle"><div class="flame"></div></div>
+</div>
 </div>
 
-<div class="message" id="msg2">
-    From laughter to chaos, from silence to stories —  
-    I’d choose you in every universe 🌌
+<div class="message-container">
+<div class="message">
+<p>My dearest Alex,</p>
+<p>You are my best friend, my love, and my greatest blessing. Every day with you is a gift I never take for granted.</p>
+<p>May this year bring you happiness, love, and dreams fulfilled. I will always be here—loving you endlessly.</p>
+</div>
+<div class="signature">— Paul 💕</div>
 </div>
 
-<div class="message" id="msg3">
-    This is not just a birthday gift…  
-    It’s a reminder that you are deeply, endlessly loved 💖
+<button class="birthday-btn" id="btn">
+<i class="fas fa-heart"></i> Light the Candles
+</button>
+
+<div class="love-note" id="note">
+<h3>I Love You, Alex 💖</h3>
+<p>You still give me butterflies. Today, tomorrow, always—it's you.</p>
 </div>
 
-<!-- Slideshow -->
-<div class="slideshow" id="slideshow">
-    <!-- Replace image paths with your own photos -->
-    <img src="photo1.jpg">
-    <img src="photo2.jpg">
-    <img src="photo3.jpg">
 </div>
-
-<!-- Audio -->
-<audio id="birthdaySong">
-    <!-- Replace with your MP3 file -->
-    <source src="happy-birthday.mp3" type="audio/mpeg">
-</audio>
+</div>
 
 <script>
-const btn = document.getElementById("startBtn");
-const song = document.getElementById("birthdaySong");
-const messages = document.querySelectorAll(".message");
-const slideshow = document.getElementById("slideshow");
-const slides = slideshow.querySelectorAll("img");
+const stars=document.getElementById("stars");
+for(let i=0;i<120;i++){
+let s=document.createElement("div");
+s.className="star";
+let size=Math.random()*3+1;
+s.style.width=s.style.height=size+"px";
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+stars.appendChild(s);
+}
 
-let slideIndex = 0;
+document.getElementById("btn").onclick=()=>{
+/* 🔊 PLAY BACKGROUND MUSIC */
+const bgMusic=document.getElementById("bgMusic");
+bgMusic.volume=0.5;
+bgMusic.play().catch(()=>{});
 
-btn.addEventListener("click", () => {
+/* 🔥 LIGHT CANDLES */
+document.querySelectorAll(".flame").forEach(f=>f.classList.add("lit"));
+document.getElementById("note").style.display="block";
 
-    // Play music (mobile safe)
-    song.play();
+/* 🎵 SHORT MELODY (kept) */
+const audio=new (window.AudioContext||window.webkitAudioContext)();
+audio.resume();
 
-    btn.style.display = "none";
-
-    // Show messages one by one
-    messages.forEach((msg, i) => {
-        setTimeout(() => msg.style.display = "block", i * 3000);
-    });
-
-    // Show slideshow after messages
-    setTimeout(() => {
-        slideshow.style.display = "block";
-        slides[0].style.display = "block";
-
-        setInterval(() => {
-            slides[slideIndex].style.display = "none";
-            slideIndex = (slideIndex + 1) % slides.length;
-            slides[slideIndex].style.display = "block";
-        }, 2500);
-    }, 9000);
-
-    // Hearts
-    setInterval(createHeart, 500);
+let notes=[523,587,659,698,784,659,587,523];
+let t=audio.currentTime;
+notes.forEach(n=>{
+let o=audio.createOscillator();
+let g=audio.createGain();
+o.connect(g);g.connect(audio.destination);
+o.frequency.value=n;
+g.gain.setValueAtTime(0,t);
+g.gain.linearRampToValueAtTime(.2,t+.05);
+g.gain.exponentialRampToValueAtTime(.001,t+.6);
+o.start(t);o.stop(t+.6);
+t+=.6;
 });
 
-function createHeart() {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "💖";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.bottom = "-20px";
-    document.body.appendChild(heart);
+/* ❤️ FLOATING HEARTS */
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart-particle";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+h.style.top="100vh";
+document.body.appendChild(h);
+h.animate([
+{transform:"translateY(0)",opacity:1},
+{transform:"translateY(-120vh)",opacity:0}
+],{duration:4000});
+setTimeout(()=>h.remove(),4000);
+},800);
 
-    setTimeout(() => heart.remove(), 4000);
-}
+document.getElementById("btn").disabled=true;
+};
 </script>
 
 </body>
