@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love, Alex!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a0a0a 0%, #2e0e0e 50%, #1a0a0a 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 20px;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .header {
+            margin-bottom: 40px;
+            animation: fadeInDown 1.2s ease-out;
+        }
+        
+        h1 {
+            color: #ff3b6d;
+            font-size: 4.2rem;
+            text-shadow: 0 0 15px rgba(255, 59, 109, 0.7), 0 0 30px rgba(255, 59, 109, 0.5);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            font-family: 'Dancing Script', cursive;
+            position: relative;
+        }
+        
+        h1:after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #ff3b6d, transparent);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .subtitle {
+            color: #ffa3b4;
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-top: 30px;
+            letter-spacing: 1px;
+        }
+        
+        .hearts-title {
+            color: #ff3b6d;
+            font-size: 1.5rem;
+            margin-top: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        .birthday-box {
+            background: linear-gradient(145deg, rgba(90, 10, 20, 0.9), rgba(40, 5, 10, 0.95));
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 100px rgba(255, 20, 60, 0.2) inset;
+            padding: 40px 30px;
+            margin-bottom: 40px;
+            animation: fadeInUp 1.2s ease-out 0.5s both;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 59, 109, 0.3);
+        }
+        
+        .birthday-box:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ff3b6d, #ff1a4d, #ff3b6d, transparent);
+            z-index: 1;
+        }
+        
+        .cake-container {
+            position: relative;
+            height: 350px;
+            margin: 20px auto;
+            width: 320px;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
+        }
+        
+        /* Cake styling - Red Theme */
+        .cake {
+            position: absolute;
+            width: 280px;
+            height: 120px;
+            background: linear-gradient(135deg, #ff1a4d 0%, #b3002d 100%);
+            border-radius: 50% 50% 0 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+        
+        .cake:before {
+            content: '';
+            position: absolute;
+            width: 310px;
+            height: 40px;
+            background: linear-gradient(135deg, #ff4d7a 0%, #e60039 100%);
+            border-radius: 50% 50% 0 0;
+            top: -20px;
+            left: -15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        
+        .cake:after {
+            content: '';
+            position: absolute;
+            width: 250px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff3366 0%, #cc0033 100%);
+            border-radius: 50% 50% 0 0;
+            top: -60px;
+            left: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 3;
+        }
+        
+        /* Cake layers */
+        .layer {
+            position: absolute;
+            height: 25px;
+            background: #ffd1dc;
+            border-radius: 12px;
+            z-index: 4;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .layer-1 {
+            bottom: 100px;
+            width: 310px;
+            left: -30px;
+            background: linear-gradient(to right, #ffd1dc, #ff8fa3);
+        }
+        
+        .layer-2 {
+            bottom: 75px;
+            width: 290px;
+            left: -15px;
+            background: linear-gradient(to right, #ffebee, #ffb3c1);
+        }
+        
+        /* Plate */
+        .plate {
+            position: absolute;
+            width: 340px;
+            height: 20px;
+            background: linear-gradient(135deg, #555, #222);
+            border-radius: 50%;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        
+        /* Candles */
+        .candles {
+            position: absolute;
+            width: 100%;
+            bottom: 170px;
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            z-index: 10;
+        }
+        
+        .candle {
+            width: 14px;
+            height: 50px;
+            background: linear-gradient(to bottom, #ff1a4d, #990022);
+            border-radius: 7px;
+            position: relative;
+            animation: candleFloat 4s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(255, 26, 77, 0.5);
+        }
+        
+        .candle:nth-child(2) {
+            animation-delay: 0.7s;
+            background: linear-gradient(to bottom, #ff3366, #b3002d);
+        }
+        
+        .candle:nth-child(3) {
+            animation-delay: 1.4s;
+            background: linear-gradient(to bottom, #ff4d7a, #cc0033);
+        }
+        
+        .candle:nth-child(4) {
+            animation-delay: 2.1s;
+            background: linear-gradient(to bottom, #ff6680, #e60039);
+        }
+        
+        .candle:nth-child(5) {
+            animation-delay: 2.8s;
+            background: linear-gradient(to bottom, #ff8099, #ff1a4d);
+        }
+        
+        .flame {
+            position: absolute;
+            width: 18px;
+            height: 35px;
+            background: radial-gradient(#ffde59 20%, #ff9e00 60%, #ff3b6d 90%);
+            border-radius: 50% 50% 20% 20%;
+            top: -40px;
+            left: -2px;
+            opacity: 0;
+            filter: blur(1px);
+            box-shadow: 0 0 20px #ff9e00, 0 0 40px #ff3b6d;
+            transform-origin: center bottom;
+        }
+        
+        .flame.lit {
+            animation: flameFlicker 0.4s ease-in-out infinite alternate;
+        }
+        
+        /* Message */
+        .message-container {
+            position: relative;
+            padding: 30px;
+            margin: 40px 0;
+            background: rgba(20, 5, 10, 0.7);
+            border-radius: 20px;
+            border-left: 4px solid #ff3b6d;
+            text-align: left;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .message {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #ffd1dc;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .message p {
+            margin-bottom: 20px;
+        }
+        
+        .message-highlight {
+            color: #ffde59;
+            font-weight: 600;
+        }
+        
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.2rem;
+            color: #ff3b6d;
+            margin-top: 30px;
+            text-align: right;
+            text-shadow: 0 0 10px rgba(255, 59, 109, 0.5);
+        }
+        
+        .signature span {
+            font-size: 2rem;
+            color: #ffa3b4;
+            display: block;
+            margin-top: 5px;
+        }
+        
+        /* Rose animation */
+        .roses {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .rose {
+            width: 60px;
+            height: 80px;
+            position: relative;
+            animation: roseFloat 8s ease-in-out infinite;
+        }
+        
+        .rose .petals {
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle at 30% 30%, #ff1a4d, #b3002d);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: relative;
+            transform: rotate(45deg);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .rose .stem {
+            width: 8px;
+            height: 70px;
+            background: linear-gradient(to bottom, #228B22, #006400);
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 4px;
+        }
+        
+        .rose .leaf {
+            width: 20px;
+            height: 15px;
+            background: #228B22;
+            border-radius: 50% 0 50% 50%;
+            position: absolute;
+            top: 80px;
+            left: 40px;
+            transform: rotate(-45deg);
+        }
+        
+        .rose:nth-child(2) {
+            animation-delay: 2s;
+        }
+        
+        .rose:nth-child(3) {
+            animation-delay: 4s;
+        }
+        
+        .rose:nth-child(4) {
+            animation-delay: 6s;
+        }
+        
+        /* Button to light candles */
+        .button-container {
+            margin: 40px 0;
+        }
+        
+        .birthday-btn {
+            background: linear-gradient(135deg, #ff1a4d, #b3002d);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(179, 0, 45, 0.4), 0 0 30px rgba(255, 26, 77, 0.3);
+            transition: all 0.4s ease;
+            font-weight: 600;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .birthday-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s;
+            z-index: -1;
+        }
+        
+        .birthday-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(179, 0, 45, 0.6), 0 0 40px rgba(255, 26, 77, 0.5);
+        }
+        
+        .birthday-btn:hover:before {
+            left: 100%;
+        }
+        
+        .birthday-btn:active {
+            transform: translateY(0);
+        }
+        
+        .birthday-btn i {
+            margin-right: 10px;
+        }
+        
+        /* Heart particles */
+        .heart-particle {
+            position: absolute;
+            font-size: 1.5rem;
+            color: #ff3b6d;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 5;
+        }
+        
+        /* Love note */
+        .love-note {
+            background: rgba(255, 59, 109, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 40px;
+            border: 1px solid rgba(255, 59, 109, 0.3);
+            position: relative;
+            display: none;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .love-note h3 {
+            color: #ffde59;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .love-note p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #ffb3c1;
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-80px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(80px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+        
+        @keyframes candleFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0);
+            }
+            25% {
+                transform: translateY(-8px) rotate(0.5deg);
+            }
+            75% {
+                transform: translateY(-4px) rotate(-0.5deg);
+            }
+        }
+        
+        @keyframes flameFlicker {
+            0% {
+                transform: scale(1) rotate(-1deg);
+                background: radial-gradient(#ffde59 20%, #ff9e00 60%, #ff3b6d 90%);
+            }
+            100% {
+                transform: scale(1.1) rotate(1deg);
+                background: radial-gradient(#ffff00 20%, #ff7700 60%, #ff1a4d 90%);
+            }
+        }
+        
+        @keyframes roseFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+        
+        @keyframes heartFloat {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotate(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-150px) scale(1.5) rotate(20deg);
+            }
+        }
+        
+        @keyframes starTwinkle {
+            0%, 100% {
+                opacity: 0.2;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        
+        /* Stars background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: starTwinkle 3s infinite;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .cake-container {
+                width: 280px;
+                height: 300px;
+            }
+            
+            .cake {
+                width: 240px;
+                height: 100px;
+            }
+            
+            .cake:before {
+                width: 270px;
+            }
+            
+            .cake:after {
+                width: 210px;
+            }
+            
+            .layer-1 {
+                width: 270px;
+                left: -25px;
+            }
+            
+            .layer-2 {
+                width: 250px;
+                left: -10px;
+            }
+            
+            .plate {
+                width: 300px;
+            }
+            
+            .message {
+                font-size: 1.2rem;
+            }
+            
+            .signature {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cake-container {
+                width: 240px;
+                height: 260px;
+            }
+            
+            .cake {
+                width: 200px;
+                height: 80px;
+            }
+            
+            .cake:before {
+                width: 230px;
+            }
+            
+            .cake:after {
+                width: 170px;
+            }
+            
+            .candles {
+                gap: 15px;
+                bottom: 140px;
+            }
+            
+            .candle {
+                width: 10px;
+                height: 40px;
+            }
+            
+            .flame {
+                width: 14px;
+                height: 25px;
+                top: -30px;
+            }
+            
+            .birthday-btn {
+                padding: 15px 30px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Stars background -->
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Happy Birthday My Love, Alex!</h1>
+            <div class="subtitle">Today is all about celebrating you, the most amazing person in my life</div>
+            <div class="hearts-title">With all my love, Paul ❤️</div>
+        </div>
+        
+        <div class="birthday-box">
+            <div class="cake-container">
+                <div class="plate"></div>
+                <div class="cake"></div>
+                <div class="layer layer-1"></div>
+                <div class="layer layer-2"></div>
+                <div class="candles">
+                    <div class="candle">
+                        <div class="flame" data-lit="false"></div>
+                    </div>
+                    <div class="candle">
+                        <div class="flame" data-lit="false"></div>
+                    </div>
+                    <div class="candle">
+                        <div class="flame" data-lit="false"></div>
+                    </div>
+                    <div class="candle">
+                        <div class="flame" data-lit="false"></div>
+                    </div>
+                    <div class="candle">
+                        <div class="flame" data-lit="false"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="roses">
+                <div class="rose">
+                    <div class="petals"></div>
+                    <div class="stem"></div>
+                    <div class="leaf"></div>
+                </div>
+                <div class="rose">
+                    <div class="petals"></div>
+                    <div class="stem"></div>
+                    <div class="leaf"></div>
+                </div>
+                <div class="rose">
+                    <div class="petals"></div>
+                    <div class="stem"></div>
+                    <div class="leaf"></div>
+                </div>
+                <div class="rose">
+                    <div class="petals"></div>
+                    <div class="stem"></div>
+                    <div class="leaf"></div>
+                </div>
+            </div>
+            
+            <div class="message-container">
+                <div class="message">
+                    <p>My dearest Alex,</p>
+                    <p>On this special day that brought you into the world, I want you to know how incredibly grateful I am to have you in my life. You are not just my girlfriend, but my best friend, my confidant, and my greatest adventure.</p>
+                    <p>Every moment with you feels like a beautiful dream I never want to wake up from. Your smile lights up my world, your laughter is my favorite melody, and your love is the greatest gift I've ever received.</p>
+                    <p class="message-highlight">Today, I celebrate you - the wonderful, strong, beautiful person you are. May this year bring you even more joy, success, and dreams come true than you could ever imagine.</p>
+                    <p>No matter how many birthdays we celebrate together, I will always look at you with the same wonder and love as I did the first day we met.</p>
+                </div>
+                <div class="signature">
+                    Forever yours,<br>Paul <span>Your boyfriend who loves you more than words can say</span>
+                </div>
+            </div>
+            
+            <div class="button-container">
+                <button class="birthday-btn" id="surpriseBtn">
+                    <i class="fas fa-heart"></i> Light the Candles, My Love!
+                </button>
+            </div>
+            
+            <div class="love-note" id="loveNote">
+                <h3>A Secret Just For You...</h3>
+                <p>My beautiful Alex, I have a confession to make. Every time I see you, my heart does this little happy dance. Even after all this time, you still give me butterflies. I fall in love with you all over again every single day. Thank you for being you, and for letting me love you. This birthday, I wish for all your dreams to come true, because seeing you happy is what makes me the happiest man alive. I love you more than red, more than all the stars in the sky, more than anything. Happy Birthday, my love.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const surpriseBtn = document.getElementById('surpriseBtn');
+            const flames = document.querySelectorAll('.flame');
+            const loveNote = document.getElementById('loveNote');
+            const starsContainer = document.getElementById('stars');
+            
+            // Create stars background
+            createStars();
+            
+            // Create initial floating hearts
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => createHeart(false), i * 300);
+            }
+            
+            // Surprise button click event
+            surpriseBtn.addEventListener('click', function() {
+                // Light the candles
+                flames.forEach(flame => {
+                    flame.style.opacity = '1';
+                    flame.classList.add('lit');
+                    flame.setAttribute('data-lit', 'true');
+                });
+                
+                // Create heart explosion
+                createHeartExplosion();
+                
+                // Show love note
+                setTimeout(() => {
+                    loveNote.style.display = 'block';
+                    loveNote.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 1000);
+                
+                // Change button text and add effect
+                surpriseBtn.innerHTML = '<i class="fas fa-heart"></i> I Love You Alex! Happy Birthday! <i class="fas fa-heart"></i>';
+                surpriseBtn.disabled = true;
+                surpriseBtn.style.background = 'linear-gradient(135deg, #ff3366, #ff1a4d)';
+                surpriseBtn.style.boxShadow = '0 10px 30px rgba(255, 51, 102, 0.7), 0 0 50px rgba(255, 26, 77, 0.5)';
+                
+                // Play romantic audio
+                playRomanticAudio();
+                
+                // Create continuous floating hearts
+                setInterval(() => createHeart(true), 800);
+                
+                // Add glowing effect to cake
+                document.querySelector('.cake').style.boxShadow = 'inset -10px -10px 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 59, 109, 0.7)';
+                
+                // Create floating "Happy Birthday" text
+                setTimeout(createFloatingText, 500);
+            });
+            
+            function createStars() {
+                const starCount = 150;
+                
+                for (let i = 0; i < starCount; i++) {
+                    const star = document.createElement('div');
+                    star.classList.add('star');
+                    
+                    const size = Math.random() * 3 + 1;
+                    star.style.width = `${size}px`;
+                    star.style.height = `${size}px`;
+                    
+                    star.style.left = `${Math.random() * 100}vw`;
+                    star.style.top = `${Math.random() * 100}vh`;
+                    
+                    star.style.animationDelay = `${Math.random() * 3}s`;
+                    
+                    starsContainer.appendChild(star);
+                }
+            }
+            
+            function createHeart(isSpecial) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-particle';
+                heart.innerHTML = isSpecial ? '❤️' : '💖';
+                heart.style.left = Math.random() * 90 + 5 + 'vw';
+                heart.style.fontSize = (Math.random() * 25 + 20) + 'px';
+                heart.style.opacity = '1';
+                heart.style.filter = `hue-rotate(${Math.random() * 40 - 20}deg)`;
+                
+                document.body.appendChild(heart);
+                
+                // Animation
+                const duration = Math.random() * 3 + 2;
+                heart.animate([
+                    { transform: 'translateY(100vh) scale(0.5) rotate(0deg)', opacity: 1 },
+                    { transform: `translateY(-${window.innerHeight}px) scale(1.5) rotate(${Math.random() * 40 - 20}deg)`, opacity: 0 }
+                ], {
+                    duration: duration * 1000,
+                    easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
+                });
+                
+                // Remove after animation completes
+                setTimeout(() => {
+                    heart.remove();
+                }, duration * 1000);
+            }
+            
+            function createHeartExplosion() {
+                const heartCount = 50;
+                const explosionCenterX = window.innerWidth / 2;
+                const explosionCenterY = window.innerHeight / 2;
+                
+                for (let i = 0; i < heartCount; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.className = 'heart-particle';
+                        heart.innerHTML = '❤️';
+                        heart.style.left = explosionCenterX + 'px';
+                        heart.style.top = explosionCenterY + 'px';
+                        heart.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                        heart.style.opacity = '1';
+                        heart.style.position = 'fixed';
+                        heart.style.zIndex = '100';
+                        
+                        document.body.appendChild(heart);
+                        
+                        // Calculate random direction
+                        const angle = Math.random() * Math.PI * 2;
+                        const distance = Math.random() * 300 + 100;
+                        const targetX = explosionCenterX + Math.cos(angle) * distance;
+                        const targetY = explosionCenterY + Math.sin(angle) * distance;
+                        
+                        // Animation
+                        const duration = Math.random() * 1.5 + 1;
+                        heart.animate([
+                            { transform: 'translate(0, 0) scale(1) rotate(0deg)', opacity: 1 },
+                            { transform: `translate(${targetX - explosionCenterX}px, ${targetY - explosionCenterY}px) scale(0.5) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                        ], {
+                            duration: duration * 1000,
+                            easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+                        });
+                        
+                        // Remove after animation completes
+                        setTimeout(() => {
+                            heart.remove();
+                        }, duration * 1000);
+                    }, i * 30);
+                }
+            }
+            
+            function playRomanticAudio() {
+                try {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    playRomanticMelody(audioContext);
+                } catch (e) {
+                    console.log("Audio not supported, but the visual experience is complete!");
+                }
+            }
+            
+            function playRomanticMelody(audioContext) {
+                // A romantic melody for Alex
+                const romanticNotes = [
+                    { frequency: 659.25, duration: 0.8 }, // E5
+                    { frequency: 622.25, duration: 0.8 }, // D#5
+                    { frequency: 587.33, duration: 0.8 }, // D5
+                    { frequency: 523.25, duration: 0.8 }, // C5
+                    { frequency: 493.88, duration: 0.8 }, // B4
+                    { frequency: 440.00, duration: 0.8 }, // A4
+                    { frequency: 493.88, duration: 0.8 }, // B4
+                    { frequency: 523.25, duration: 1.2 }, // C5
+                    { frequency: 659.25, duration: 0.8 }, // E5
+                    { frequency: 622.25, duration: 0.8 }, // D#5
+                    { frequency: 587.33, duration: 0.8 }, // D5
+                    { frequency: 523.25, duration: 0.8 }, // C5
+                    { frequency: 493.88, duration: 0.8 }, // B4
+                    { frequency: 440.00, duration: 0.8 }, // A4
+                    { frequency: 493.88, duration: 0.8 }, // B4
+                    { frequency: 523.25, duration: 1.2 }, // C5
+                ];
+                
+                let time = audioContext.currentTime + 0.1;
+                
+                romanticNotes.forEach((note, index) => {
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    oscillator.frequency.value = note.frequency;
+                    oscillator.type = index % 3 === 0 ? 'sine' : 'triangle';
+                    
+                    gainNode.gain.setValueAtTime(0, time);
+                    gainNode.gain.linearRampToValueAtTime(0.2, time + 0.05);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, time + note.duration);
+                    
+                    oscillator.start(time);
+                    oscillator.stop(time + note.duration);
+                    
+                    time += note.duration + (index % 4 === 3 ? 0.2 : 0.1);
+                });
+            }
+            
+            function createFloatingText() {
+                const messages = ['Happy Birthday Alex!', 'I Love You!', 'You Are Amazing!', 'My Beautiful Girl', 'All My Love, Paul'];
+                
+                messages.forEach((message, index) => {
+                    setTimeout(() => {
+                        const textElement = document.createElement('div');
+                        textElement.textContent = message;
+                        textElement.style.position = 'fixed';
+                        textElement.style.left = Math.random() * 70 + 15 + 'vw';
+                        textElement.style.top = '100vh';
+                        textElement.style.fontSize = '2.5rem';
+                        textElement.style.color = '#ff3b6d';
+                        textElement.style.fontWeight = 'bold';
+                        textElement.style.fontFamily = "'Dancing Script', cursive";
+                        textElement.style.textShadow = '0 0 10px rgba(255, 59, 109, 0.7)';
+                        textElement.style.zIndex = '10';
+                        textElement.style.pointerEvents = 'none';
+                        textElement.style.opacity = '0.9';
+                        
+                        document.body.appendChild(textElement);
+                        
+                        // Animate
+                        const animation = textElement.animate([
+                            { transform: 'translateY(0) scale(0.8)', opacity: 0.9 },
+                            { transform: `translateY(-${window.innerHeight + 200}px) scale(1.2)`, opacity: 0 }
+                        ], {
+                            duration: 8000,
+                            easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
+                        });
+                        
+                        // Remove after animation
+                        animation.onfinish = () => textElement.remove();
+                    }, index * 1500);
+                });
+            }
+            
+            // Add some interactive sparkles when moving mouse
+            document.addEventListener('mousemove', function(e) {
+                if (Math.random() > 0.7) {
+                    const sparkle = document.createElement('div');
+                    sparkle.style.position = 'fixed';
+                    sparkle.style.left = e.clientX + 'px';
+                    sparkle.style.top = e.clientY + 'px';
+                    sparkle.style.width = '10px';
+                    sparkle.style.height = '10px';
+                    sparkle.style.background = 'radial-gradient(circle, #ffde59, #ff3b6d)';
+                    sparkle.style.borderRadius = '50%';
+                    sparkle.style.pointerEvents = 'none';
+                    sparkle.style.zIndex = '5';
+                    
+                    document.body.appendChild(sparkle);
+                    
+                    // Animate
+                    sparkle.animate([
+                        { transform: 'scale(1)', opacity: 1 },
+                        { transform: 'scale(0)', opacity: 0 }
+                    ], {
+                        duration: 800,
+                        easing: 'ease-out'
+                    });
+                    
+                    // Remove after animation
+                    setTimeout(() => sparkle.remove(), 800);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
